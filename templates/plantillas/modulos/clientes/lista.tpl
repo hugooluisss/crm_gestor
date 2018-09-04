@@ -16,6 +16,7 @@
 						<td>{$row.correo}</td>
 						<td>{$row.telefono}</td>
 						<td style="text-align: right">
+							<a href="automoviles/{$row.idCliente}-{str_replace(" ", "", $row.nombre)}/" class="btn btn-primary btn-xs" title="Automoviles" datos='{$row.json}'><i class="fa fa-car" aria-hidden="true"></i></a>
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
 							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="{$row.idCliente}"><i class="fa fa-times"></i></button>
 						</td>

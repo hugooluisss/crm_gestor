@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-08-31 13:25:42
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-04 13:40:15
          compiled from "templates/plantillas/modulos/clientes/lista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7708486145b8988263a1165-87957772%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:5383360195b8ed0bf741b75-08817547%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8b3d926bdf5ef13138597e908a4dd74ad59633ab' => 
     array (
       0 => 'templates/plantillas/modulos/clientes/lista.tpl',
-      1 => 1535739904,
+      1 => 1536086406,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7708486145b8988263a1165-87957772',
+  'nocache_hash' => '5383360195b8ed0bf741b75-08817547',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5b8ed0bf7b6d56_16579035',
   'variables' => 
   array (
     'lista' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5b898826437381_01570573',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b898826437381_01570573')) {function content_5b898826437381_01570573($_smarty_tpl) {?><div class="box">
+<?php if ($_valid && !is_callable('content_5b8ed0bf7b6d56_16579035')) {function content_5b8ed0bf7b6d56_16579035($_smarty_tpl) {?><div class="box">
 	<div class="box-body" style="width: 100%; overflow: auto">
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
@@ -49,6 +49,10 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['telefono'];?>
 </td>
 						<td style="text-align: right">
+							<a href="automoviles/<?php echo $_smarty_tpl->tpl_vars['row']->value['idCliente'];?>
+-<?php echo str_replace(" ",'',$_smarty_tpl->tpl_vars['row']->value['nombre']);?>
+/" class="btn btn-primary btn-xs" title="Automoviles" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><i class="fa fa-car" aria-hidden="true"></i></a>
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-edit"></i></button>
 							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idCliente'];?>

@@ -40,7 +40,6 @@ class TCliente{
 		$db = TBase::conectaDB();
 		$sql = "select * from cliente where idCliente = ".$id;
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
-		
 		foreach($rs->fetch_assoc() as $field => $val)
 			$this->$field = $val;
 		

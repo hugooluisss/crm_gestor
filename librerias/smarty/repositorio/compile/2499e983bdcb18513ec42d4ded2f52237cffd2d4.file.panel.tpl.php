@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-08-31 13:08:50
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-04 13:35:50
          compiled from "templates/plantillas/modulos/tramites/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:5407810475b89597ac331c2-59976962%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3136345665b8ed086c1ef55-05516763%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2499e983bdcb18513ec42d4ded2f52237cffd2d4' => 
     array (
       0 => 'templates/plantillas/modulos/tramites/panel.tpl',
-      1 => 1535738929,
+      1 => 1536084370,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5407810475b89597ac331c2-59976962',
+  'nocache_hash' => '3136345665b8ed086c1ef55-05516763',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5b89597ac81316_94887896',
   'variables' => 
   array (
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5b8ed086c8b9e6_75137931',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b89597ac81316_94887896')) {function content_5b89597ac81316_94887896($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_5b8ed086c8b9e6_75137931')) {function content_5b8ed086c8b9e6_75137931($_smarty_tpl) {?><div class="row">
 	<div class="col-sm-12">
 		<h1 class="page-header">Administración de trámites</h1>
 	</div>

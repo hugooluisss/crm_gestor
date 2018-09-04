@@ -8,11 +8,11 @@ $ini = array(
 		"slogan" => "",
 		"template" => "default",
 		"ssl" => "no",
-		"url" => "http://localhost/crm_gestor/"
+		"url" => "http://localhost/crmgestor/"
 	),
 	"conexion" => array(
-		"server" => "localhost",
-		"user" => "root",
+		"server" => "192.168.2.2",
+		"user" => "huguntu",
 		"pass" => "k0rgk0rg",
 		"db" => "crm_gestor"
 	)
