@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-04 13:35:32
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-05 09:53:05
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1016306995b8ed074ecf0a3-65478544%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1536084370,
+      1 => 1536159185,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5b8ed07509caf6_97629602',
   'variables' => 
   array (
     'PAGE' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5b8ed07509caf6_97629602',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b8ed07509caf6_97629602')) {function content_5b8ed07509caf6_97629602($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -156,16 +156,18 @@ img/logo.png" alt="User Image" style="background: white"/>
 					<?php }?>
 					
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getPerfil()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('tramites'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('tramites','clientes','automoviles'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='tramites'){?>class="active"<?php }?>><a href="tramites"><i class="fa fa-file" aria-hidden="true"></i> Trámites</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='clientes'){?>class="active"<?php }?>><a href="clientes"><i class="fa fa-briefcase" aria-hidden="true"></i> Clientes</a></li>
+							<li <?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','automoviles'))){?>class="active"<?php }?>><a href="clientes"><i class="fa fa-briefcase" aria-hidden="true"></i> Clientes</a></li>
 						</ul>
 					</li>
 					<?php }?>
+					<hr />
+					<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='ordenes'){?>class="active"<?php }?>><a href="ordenes"><i class="fa fa-exchange" aria-hidden="true"></i> Solicitudes Trámites</a></li>
 				</ul>
 			</section>
 			<!-- /.sidebar -->

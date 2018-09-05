@@ -6,7 +6,7 @@ $conf['automoviles'] = array(
 	'vista' => 'automoviles/panel.tpl',
 	'descripcion' => 'Administración del catálogo de automoviles',
 	'seguridad' => true,
-	'js' => array('cliente.class.js'),
+	'js' => array('automovil.class.js'),
 	'jsTemplate' => array('automoviles.js'),
 	'capa' => LAYOUT_BACKEND);
 

@@ -1,6 +1,17 @@
 $(document).ready(function(){
 	getLista();
 	
+	$("#txtCliente").autocomplete({
+		"source": function(term, response){
+			$.post("cclientes", {
+				"action": "autocomplete",
+				"q": term
+			}, function(data){
+				response(data)
+			}, "json")
+		}
+	});
+	
 	$("#panelTabs li a[href=#add]").click(function(){
 		$("#frmAdd").get(0).reset();
 		$("#id").val("");
@@ -14,17 +25,18 @@ $(document).ready(function(){
 	$("#frmAdd").validate({
 		debug: true,
 		rules: {
-			txtMarca: "required"
+			txtCliente: "required",
+			txtTramite: "required",
+			txtObservaciones: "required"
 		},
 		wrapper: 'span',
 		submitHandler: function(form){
-			var obj = new TAutomovil;
+			var obj = new TOrden;
 			obj.add({
 				id: $("#id").val(), 
-				cliente: $("#cliente").val(), 
-				marca: $("#txtMarca").val(), 
-				modelo: $("#txtModelo").val(),
-				anio: $("#txtAnio").val(),
+				cliente: $("#txtCliente").attr("identificador"), 
+				tramite: $("#txtTramite").attr("identificador"), 
+				observaciones: $("#txtObservaciones").val(),
 				fn: {
 					after: function(datos){
 						if (datos.band){
@@ -42,14 +54,12 @@ $(document).ready(function(){
     });
 		
 	function getLista(){
-		$.post("listaautomoviles", {
-			cliente: $("#cliente").val()
-		}, function(data) {
+		$.get("listagrupos", function(data) {
 			$("#dvLista").html(data);
 			
 			$("[action=eliminar]").click(function(){
 				if(confirm("¿Seguro?")){
-					var obj = new TAutomovil;
+					var obj = new TOrden;
 					obj.del({
 						"id": $(this).attr("identificador"), 
 						fn: {
@@ -64,12 +74,11 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idAuto);
-				$("#txtMarca").val(el.marca);
-				$("#txtModelo").val(el.modelo);
-				$("#txtAnio").val(el.anio);
-				$("#cliente").val(el.idCliente);
-				
+				$("#id").val(el.idGrupo);
+				$("#txtCliente").val(el.nombreCliente);
+				$("#txtCliente").attr("identificador", el.idCliente);
+				$("#selTramite").val(el.idTramite);
+				$("#txtObservaciones").val(el.observaciones);
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
 			

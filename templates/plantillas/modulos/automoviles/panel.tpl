@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h1 class="page-header">Automoviles</h1>
+		<h1 class="page-header"><a href="clientes" class="btn btn-link" title="Regresar a clientes"><i class="fa fa-2x fa-chevron-circle-left" aria-hidden="true"></i></a> Automoviles</h1>
 		<h5 class="text-muted">{$cliente->getNombre()}</h5>
 	</div>
 </div>
@@ -35,8 +35,14 @@
 					</div>
 					<div class="form-group">
 						<label for="txtAnio" class="col-sm-3 control-label">Año</label>
-						<div class="col-sm-6">
-							<input class="form-control" id="txtAnio" name="txtAnio" type="text" />
+						<div class="col-sm-3">
+							<select id="txtAnio" name="txtAnio" class="form-control">
+								{assign var="anio" value=date('Y')+1}
+								{while $anio > (date('Y')-50)}
+									<option value="{$anio}">{$anio}</option>
+									{$anio--}
+								{/while}
+							</select>
 						</div>
 					</div>
 				</div>
@@ -44,7 +50,7 @@
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
 					<button type="submit" class="btn btn-info pull-right">Guardar</button>
 					<input type="hidden" id="id"/>
-					<input type="text" id="cliente" value="{$cliente->getId()}"/>
+					<input type="hidden" id="cliente" value="{$cliente->getId()}"/>
 				</div>
 			</div>
 		</form>

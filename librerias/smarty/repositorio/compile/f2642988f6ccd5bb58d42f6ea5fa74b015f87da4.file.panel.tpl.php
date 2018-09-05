@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-04 14:06:09
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-05 09:50:09
          compiled from "templates/plantillas/modulos/automoviles/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1581417585b8ed5b8cdb424-68493775%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2642988f6ccd5bb58d42f6ea5fa74b015f87da4' => 
     array (
       0 => 'templates/plantillas/modulos/automoviles/panel.tpl',
-      1 => 1536087967,
+      1 => 1536159003,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'cliente' => 0,
+    'anio' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b8ed5b8dc78b4_68411056')) {function content_5b8ed5b8dc78b4_68411056($_smarty_tpl) {?><div class="row">
 	<div class="col-sm-12">
-		<h1 class="page-header">Automoviles</h1>
+		<h1 class="page-header"><a href="clientes" class="btn btn-link" title="Regresar a clientes"><i class="fa fa-2x fa-chevron-circle-left" aria-hidden="true"></i></a> Automoviles</h1>
 		<h5 class="text-muted"><?php echo $_smarty_tpl->tpl_vars['cliente']->value->getNombre();?>
 </h5>
 	</div>
@@ -61,8 +62,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="form-group">
 						<label for="txtAnio" class="col-sm-3 control-label">Año</label>
-						<div class="col-sm-6">
-							<input class="form-control" id="txtAnio" name="txtAnio" type="text" />
+						<div class="col-sm-3">
+							<select id="txtAnio" name="txtAnio" class="form-control">
+								<?php $_smarty_tpl->tpl_vars["anio"] = new Smarty_variable(date('Y')+1, null, 0);?>
+								<?php while ($_smarty_tpl->tpl_vars['anio']->value>(date('Y')-50)){?>
+									<option value="<?php echo $_smarty_tpl->tpl_vars['anio']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['anio']->value;?>
+</option>
+									<?php echo $_smarty_tpl->tpl_vars['anio']->value--;?>
+
+								<?php }?>
+							</select>
 						</div>
 					</div>
 				</div>
@@ -70,7 +80,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
 					<button type="submit" class="btn btn-info pull-right">Guardar</button>
 					<input type="hidden" id="id"/>
-					<input type="text" id="cliente" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getId();?>
+					<input type="hidden" id="cliente" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getId();?>
 "/>
 				</div>
 			</div>

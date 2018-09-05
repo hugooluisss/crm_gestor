@@ -45,6 +45,19 @@ switch($objModulo->getId()){
 				else
 					echo "true";
 			break;
+			case 'autocomplete':
+				$db = TBase::conectaDB();
+				global $sesion;
+				
+				$sql = "select * from cliente a where nombre like '%".$_POST['q']['term']."%' and a.visible = true";		
+				$rs = $db->query($sql) or errorMySQL($db, $sql);
+				$datos = array();
+				while($row = $rs->fetch_assoc()){
+					
+					array_push($datos, $row);
+				}
+				$smarty->assign("json", $datos);
+			break;
 		}
 	break;
 }

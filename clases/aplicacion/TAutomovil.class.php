@@ -38,7 +38,7 @@ class TAutomovil{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$sql = "select * from auto where idAuto = ".$id;
+		$sql = "select * from automovil where idAuto = ".$id;
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		
 		foreach($rs->fetch_assoc() as $field => $val)
@@ -160,7 +160,7 @@ class TAutomovil{
 	*/
 	
 	public function getCliente(){
-		return $this->cliente;
+		return $this->idCliente;
 	}
 	
 	/**
@@ -180,7 +180,7 @@ class TAutomovil{
 			$rs = $db->query($sql) or errorMySQL($db, $sql);;
 			if (!$rs) return false;
 			
-			$this->idAutomovil = $db->insert_id;
+			$this->idAuto = $db->insert_id;
 		}
 		
 		if ($this->getId() == '')

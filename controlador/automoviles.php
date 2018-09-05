@@ -10,7 +10,7 @@ switch($objModulo->getId()){
 		$db = TBase::conectaDB();
 		global $sesion;
 		
-		$sql = "select * from automovil a where idCliente = ".$_POST['cliente']." a.visible = true";		
+		$sql = "select * from automovil a where idCliente = ".$_POST['cliente']." and a.visible = true";		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){
@@ -18,6 +18,7 @@ switch($objModulo->getId()){
 			
 			array_push($datos, $row);
 		}
+		
 		$smarty->assign("lista", $datos);
 	break;
 	case 'cautomoviles':
