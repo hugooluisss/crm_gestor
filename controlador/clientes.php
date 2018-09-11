@@ -53,7 +53,8 @@ switch($objModulo->getId()){
 				$rs = $db->query($sql) or errorMySQL($db, $sql);
 				$datos = array();
 				while($row = $rs->fetch_assoc()){
-					
+					$row['value'] = $row['nombre'];
+					$row['data'] = $row['idCliente'];
 					array_push($datos, $row);
 				}
 				$smarty->assign("json", $datos);

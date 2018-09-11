@@ -17,7 +17,7 @@ switch($objModulo->getId()){
 		$db = TBase::conectaDB();
 		global $sesion;
 		
-		$sql = "select * from orden a join estadoorden b using(idEstado) where a.visible = true";		
+		$sql = "select *, c.nombre as cliente, d.nombre as tramite from orden a join estadoorden b using(idEstado) join cliente c using(idCliente) join tramite d using(idTramite) where a.visible = true";
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){

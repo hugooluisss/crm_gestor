@@ -7,8 +7,14 @@ $(document).ready(function(){
 				"action": "autocomplete",
 				"q": term
 			}, function(data){
-				response(data)
+				response(data);
 			}, "json")
+		},
+		"select": function (event, ui){
+			console.log(ui.item);
+			$("#txtCliente").val(ui.item.nombre);
+			$("#txtCliente").attr("identificador", ui.item.idCliente);
+			return false;
 		}
 	});
 	
@@ -26,7 +32,7 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtCliente: "required",
-			txtTramite: "required",
+			selTramite: "required",
 			txtObservaciones: "required"
 		},
 		wrapper: 'span',
@@ -35,7 +41,7 @@ $(document).ready(function(){
 			obj.add({
 				id: $("#id").val(), 
 				cliente: $("#txtCliente").attr("identificador"), 
-				tramite: $("#txtTramite").attr("identificador"), 
+				tramite: $("#selTramite").val(),
 				observaciones: $("#txtObservaciones").val(),
 				fn: {
 					after: function(datos){
@@ -54,7 +60,7 @@ $(document).ready(function(){
     });
 		
 	function getLista(){
-		$.get("listagrupos", function(data) {
+		$.get("listaordenes", function(data) {
 			$("#dvLista").html(data);
 			
 			$("[action=eliminar]").click(function(){
@@ -74,8 +80,8 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idGrupo);
-				$("#txtCliente").val(el.nombreCliente);
+				$("#id").val(el.idOrden);
+				$("#txtCliente").val(el.cliente);
 				$("#txtCliente").attr("identificador", el.idCliente);
 				$("#selTramite").val(el.idTramite);
 				$("#txtObservaciones").val(el.observaciones);

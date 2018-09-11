@@ -115,7 +115,7 @@ class TOrden{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$sql = "INSERT INTO orden(idTramite, cliente, registro) VALUES(".$this->tramite->getId().", ".$this->cliente->getId().", now());";
+			$sql = "INSERT INTO orden(idTramite, idCliente, registro) VALUES(".$this->tramite->getId().", ".$this->cliente->getId().", now());";
 			$rs = $db->query($sql) or errorMySQL($db, $sql);;
 			if (!$rs) return false;
 			
