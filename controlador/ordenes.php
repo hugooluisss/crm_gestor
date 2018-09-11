@@ -12,12 +12,22 @@ switch($objModulo->getId()){
 			array_push($datos, $row);
 		}
 		$smarty->assign("tramites", $datos);
+		
+		$sql = "select * from estadoorden";		
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			$row['json'] = json_encode($row);
+			
+			array_push($datos, $row);
+		}
+		$smarty->assign("estados", $datos);
 	break;
 	case 'listaordenes':
 		$db = TBase::conectaDB();
 		global $sesion;
 		
-		$sql = "select *, c.nombre as cliente, d.nombre as tramite from orden a join estadoorden b using(idEstado) join cliente c using(idCliente) join tramite d using(idTramite) where a.visible = true";
+		$sql = "select *, c.nombre as cliente, d.nombre as tramite, b.nombre as estado from orden a join estadoorden b using(idEstado) join cliente c using(idCliente) join tramite d using(idTramite) where a.visible = true";
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){
@@ -35,6 +45,8 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->cliente->setId($_POST['cliente']);
 				$obj->tramite->setId($_POST['tramite']);
+				if (isset($_POST['estado']))
+					$obj->estado->setEstado($_POST['estado']);
 				$obj->setObservaciones($_POST['observaciones']);
 				$band = $obj->guardar();
 				

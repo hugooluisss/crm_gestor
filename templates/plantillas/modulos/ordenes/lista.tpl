@@ -6,6 +6,7 @@
 					<th>Registro</th>
 					<th>Cliente</th>
 					<th>Trámite</th>
+					<th>Estado</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -15,7 +16,9 @@
 						<td style="border-left: 3px solid {$row.color}">{$row.registro}</td>
 						<td>{$row.cliente}</td>
 						<td>{$row.tramite}</td>
+						<td>{$row.estado}</td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-default btn-xs" title="Agenda de la orden" orden='{$row.idOrden}' data-toggle="modal" data-target="#winAgenda"><i class="fa fa-bell-o"></i></button> | 
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
 							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="{$row.idOrden}"><i class="fa fa-times"></i></button>
 						</td>

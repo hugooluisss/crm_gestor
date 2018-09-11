@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-07 18:35:02
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-11 13:46:26
          compiled from "templates/plantillas/modulos/ordenes/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8365875775b930822a607a4-02056786%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ccb83fbda49be8284838e579fad0d10480204fd4' => 
     array (
       0 => 'templates/plantillas/modulos/ordenes/lista.tpl',
-      1 => 1536363299,
+      1 => 1536691581,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<th>Registro</th>
 					<th>Cliente</th>
 					<th>Trámite</th>
+					<th>Estado</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -49,7 +50,11 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['tramite'];?>
 </td>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['estado'];?>
+</td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-default btn-xs" title="Agenda de la orden" orden='<?php echo $_smarty_tpl->tpl_vars['row']->value['idOrden'];?>
+' data-toggle="modal" data-target="#winAgenda"><i class="fa fa-bell-o"></i></button> | 
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-edit"></i></button>
 							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idOrden'];?>

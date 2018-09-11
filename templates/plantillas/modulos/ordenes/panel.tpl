@@ -27,6 +27,16 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="selEstado" class="col-sm-3 control-label">Estado</label>
+						<div class="col-sm-3">
+							<select id="selEstado" name="selEstado" class="form-control">
+								{foreach from=$estados item="row"}
+									<option value="{$row.idEstado}">{$row.nombre}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="selTramite" class="col-sm-3 control-label">Trámite</label>
 						<div class="col-sm-9">
 							<select id="selTramite" name="selTramite" class="form-control">
@@ -52,3 +62,5 @@
 		</form>
 	</div>
 </div>
+
+{include file=$PAGE.rutaModulos|cat:"modulos/ordenes/winAgenda.tpl"}

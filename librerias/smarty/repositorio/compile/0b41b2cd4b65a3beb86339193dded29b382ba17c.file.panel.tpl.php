@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-07 16:45:18
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-11 13:36:37
          compiled from "templates/plantillas/modulos/ordenes/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3733404725b9021c920b389-05789985%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0b41b2cd4b65a3beb86339193dded29b382ba17c' => 
     array (
       0 => 'templates/plantillas/modulos/ordenes/panel.tpl',
-      1 => 1536174173,
+      1 => 1536690995,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5b9021c925cf33_11022023',
   'variables' => 
   array (
-    'tramites' => 0,
+    'estados' => 0,
     'row' => 0,
+    'tramites' => 0,
+    'PAGE' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -50,6 +52,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<label for="txtNombre" class="col-sm-3 control-label">Cliente</label>
 						<div class="col-sm-8">
 							<input class="form-control" id="txtCliente" name="txtCliente" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="selEstado" class="col-sm-3 control-label">Estado</label>
+						<div class="col-sm-3">
+							<select id="selEstado" name="selEstado" class="form-control">
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['estados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+									<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idEstado'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</option>
+								<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -83,4 +101,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			</div>
 		</form>
 	</div>
-</div><?php }} ?>
+</div>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/ordenes/winAgenda.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>
