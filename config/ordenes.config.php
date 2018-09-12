@@ -6,7 +6,7 @@ $conf['ordenes'] = array(
 	'vista' => 'ordenes/panel.tpl',
 	'descripcion' => 'Administración de ordenes',
 	'seguridad' => true,
-	'js' => array('orden.class.js'),
+	'js' => array('orden.class.js', 'cita.class.js'),
 	'jsTemplate' => array('ordenes.js', 'agendaOrden.js'),
 	'capa' => LAYOUT_BACKEND);
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-07 16:45:13
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-11 21:12:43
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1016306995b8ed074ecf0a3-65478544%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1536174173,
+      1 => 1536718362,
       2 => 'file',
     ),
   ),
@@ -311,6 +311,12 @@ plugins/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
 plugins/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/ckeditor/adapters/jquery.js"></script>
+	
+	<!-- Date time picker-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/datetimepicker/jquery.datetimepicker.min.css"/>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/datetimepicker/jquery.datetimepicker.full.min.js"></script>
     
     <?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

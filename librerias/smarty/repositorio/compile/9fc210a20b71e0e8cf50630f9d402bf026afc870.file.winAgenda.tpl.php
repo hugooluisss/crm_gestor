@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2018-09-11 13:55:59
+<?php /* Smarty version Smarty-3.1.11, created on 2018-09-11 21:34:04
          compiled from "templates/plantillas/modulos/ordenes/winAgenda.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14292002535b980b35387802-88924833%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9fc210a20b71e0e8cf50630f9d402bf026afc870' => 
     array (
       0 => 'templates/plantillas/modulos/ordenes/winAgenda.tpl',
-      1 => 1536692083,
+      1 => 1536719642,
       2 => 'file',
     ),
   ),
@@ -36,21 +36,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="row">
 						<div class="col-xs-4">
-							<input type="text" id="txtFecha" class="form-control" readonly="true" />
+							<input type="text" id="txtFecha" name="txtFecha" class="form-control" readonly="true" />
 						</div>
 						<div class="col-xs-6">
-							<input type="text" id="txtDescripcion" class="form-control" />
+							<input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control" />
 						</div>
 						<div class="col-xs-2">
 							<button type="submit" class="btn btn-primary btn-block">Agregar</button>
 						</div>
 					</div>
 				</form>
-			
+				<br />
 				<div id="dvListaAgenda">
 				</div>
 			</div>
 			<div class="modal-footer">
+				<input type="hidden" id="idCita" />
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>

@@ -15,21 +15,22 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-4">
-							<input type="text" id="txtFecha" class="form-control" readonly="true" />
+							<input type="text" id="txtFecha" name="txtFecha" class="form-control" readonly="true" />
 						</div>
 						<div class="col-xs-6">
-							<input type="text" id="txtDescripcion" class="form-control" />
+							<input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control" />
 						</div>
 						<div class="col-xs-2">
 							<button type="submit" class="btn btn-primary btn-block">Agregar</button>
 						</div>
 					</div>
 				</form>
-			
+				<br />
 				<div id="dvListaAgenda">
 				</div>
 			</div>
 			<div class="modal-footer">
+				<input type="hidden" id="idCita" />
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
